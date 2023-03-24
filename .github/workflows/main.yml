@@ -10,6 +10,7 @@ on:
 
 jobs: 
   autoviagem:
+    permissions: read-all|write-all
     # The type of runner that the job will run on
     runs-on: macOS-11
 
@@ -33,7 +34,9 @@ jobs:
       run: Rscript viagens.R 
 
     - name: check files
-      run: ls -lha     
+      run: |
+        ls -lha
+        git status --porcelain     
     
     # https://stackoverflow.com/questions/69198886/commit-only-when-file-exists
     - name: "Check file existence"
