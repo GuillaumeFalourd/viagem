@@ -25,15 +25,15 @@ jobs:
         R -e 'install.packages("downloader")'
         R -e 'install.packages("lubridate")'
     
-    - name: check IFS.rds file
-      run: cat IFS.rds
+    - name: Rename IFS.rds file
+      run: mv IFS.rds IFS-old.rds 
     
     # Run R script
     - name: Script Viagens
       run: Rscript viagens.R 
 
-    - name: check IFS.rds file (again)
-      run: cat IFS.rds      
+    - name: check files
+      run: ls -lha     
     
     # https://stackoverflow.com/questions/69198886/commit-only-when-file-exists
     - name: "Check file existence"
