@@ -10,7 +10,7 @@ on:
 
 jobs: 
   autoviagem:
-    permissions: read-all|write-all
+    permissions: write-all
     # The type of runner that the job will run on
     runs-on: macOS-11
 
